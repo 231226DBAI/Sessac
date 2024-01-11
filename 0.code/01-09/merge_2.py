@@ -8,7 +8,7 @@ import time
 # 전역 변수 초기화
 is_index_bent = False  # 검지 손가락이 구부러진 상태 여부를 나타내는 변수
 is_click_performed = False  # 클릭 동작을 수행했는지 여부를 나타내는 변수
-hand_x, hand_y = 1174, -545  # 손 좌표 초기화
+hand_x, hand_y = 0, 0  # 손 좌표 초기화
 screen_width, scren_height = pyautogui.size()
 
 def initialize_webcam():
@@ -263,6 +263,7 @@ def main():
 
             blended = cv2.imread('Blank_Go_board.png')
             blended = cv2.resize(blended, (640,480))
+        
 
             background = np.zeros((480, 640, 3), dtype=np.uint8)
             x = (blended.shape[1] - background.shape[1]) // 2
@@ -270,6 +271,7 @@ def main():
             
             
             overlay_images(background ,blended,  x, y)
+        
 
 
             ## 격자무늬와 원 그리기
